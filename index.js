@@ -13,6 +13,9 @@ var validate = (function() {
       valid: true,
       messages: []
     };
+    
+    // if not required and no value passed, don't try to validate it
+    if(!validator.isRequired && !value) return result;
 
     for (var i = 0; i < validate.length; i++) {
       if (validate[i].validator === 'undefined') { continue; }
